@@ -8,5 +8,6 @@
 /captures
 .externalNativeBuild
 .cxx
-/.gradle.wrapper
-
+/.gradle/wrapper
+gradlew
+gradlew.bat
