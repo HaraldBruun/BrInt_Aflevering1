@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Main2Web extends AppCompatActivity {
     private WebView webView;
-    private Button knap6;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,4 +19,34 @@ public class Main2Web extends AppCompatActivity {
         setContentView(R.layout.activity_web);
 
         webView = findViewById(R.id.webView);
-    }}
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+
+        Button knap6 = findViewById(R.id.button6);
+        knap6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToYT();
+            }
+        });
+
+    }
+
+    private void goToYT() {
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://ytroulette.com/");
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.canGoBack();
+        } else {
+            super.onBackPressed();
+
+        }
+
+    }
+}
+
