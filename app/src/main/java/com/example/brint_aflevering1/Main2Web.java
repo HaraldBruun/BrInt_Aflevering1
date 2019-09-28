@@ -35,7 +35,7 @@ public class Main2Web extends AppCompatActivity {
 
     private void goToYT() {
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://ytroulette.com/");
+        webView.loadUrl("https://www.inside.dtu.dk");
     }
 
     @Override

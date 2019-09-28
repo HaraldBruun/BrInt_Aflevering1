@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button knap1, knap2, knap3, knap4, knap5;
+    private int i,k = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +41,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == knap1){
-            knap1.setText("Hej");
+            k=i+1;
+            Toast.makeText(this,Integer.toString(i) + " + 1 = " + Integer.toString(k), Toast.LENGTH_SHORT).show();
+            i=k;
         }
         else if (v == knap2){
-            knap2.setText("Hej");
+            k=i-1;
+            Toast.makeText(this,Integer.toString(i) + " - 1 = " + Integer.toString(k), Toast.LENGTH_SHORT).show();
+            i=k;
         }
         else if (v == knap3){
-            knap3.setText("Hej");
+            k=i*2;
+            Toast.makeText(this,Integer.toString(i) + " * 2 = " + Integer.toString(k), Toast.LENGTH_SHORT).show();
+            i=k;
         }
         else if (v == knap4){
-            knap4.setText("Hej");
+            k=i*4;
+            Toast.makeText(this,Integer.toString(i) + " * 4 = " + Integer.toString(k), Toast.LENGTH_SHORT).show();
+            i=k;
         }
     }
     private void openMain2Web() {
